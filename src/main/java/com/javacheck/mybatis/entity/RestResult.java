@@ -1,11 +1,14 @@
 package com.javacheck.mybatis.entity;
 
 import com.alibaba.fastjson.JSON;
+import lombok.Data;
+
 /**
  * @author Administrator
  * @create 2018/3/12-14:31
  * @DESCRIPTION 统一API响应结果封装
  */
+@Data
 public class RestResult {
     private int code;//状态码
 
@@ -18,7 +21,7 @@ public class RestResult {
         return this;
     }
 
-    public int getCode() {
+    public int getCode(int i) {
         return code;
     }
 

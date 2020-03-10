@@ -5,4 +5,8 @@
     <select id="GetCollegeNameById" resultType="java.lang.String">
        select 1 from kh_college where #{id} = id;
     </select>
+
+    <select id="selectAll" resultType="com.javacheck.mybatis.entity.College">
+       select * from kh_college;
+    </select>
 </mapper>
