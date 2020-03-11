@@ -5,4 +5,5 @@ import com.javacheck.mybatis.entity.Courseclass;
 import com.javacheck.mybatis.entity.RespPageEntity;
 
 public interface CourseclassService extends IService<Courseclass>{
+    Courseclass QueryCourseclassById(Integer id);
 }

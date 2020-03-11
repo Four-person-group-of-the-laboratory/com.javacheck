@@ -59,7 +59,15 @@ public class TestPaperServiceImpl extends ServiceImpl<TestPaperMapper,TestPaper>
     }
 
     @Override
+    public TestPaper QueryPaperById(Integer id) {
+        System.out.println("查询试卷："+testPaperMapper.selectById(id));
+        return testPaperMapper.selectById(id);
+    }
+
+    @Override
     public Long getTotal() {
         return testPaperMapper.getTotal();
     }
+
+
 }

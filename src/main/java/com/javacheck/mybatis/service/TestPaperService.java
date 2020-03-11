@@ -12,5 +12,6 @@ public interface TestPaperService extends IService<TestPaper>{
 
     List<TestPaper> QueryPaper(Integer page, Integer size, String name, Integer type, Integer college);
 
+    TestPaper QueryPaperById(Integer id);
     Long getTotal();
 }

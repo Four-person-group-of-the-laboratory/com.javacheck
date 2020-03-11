@@ -4,30 +4,33 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 import lombok.Data;
+
 import java.util.Date;
+
 /**
  * @author: lijincan
- * @date: 2019年12月07日 16:26
+ * @date: 2020年03月10日 14:01
  * @Description: TODO
  */
-@TableName("kh_courseclass")
+@TableName("kh_sysuser")
 @Data
-public class Courseclass {
-
+public class SysUser {
     @TableId(value = "id",type = IdType.AUTO)
     private int id;
+    private String account;
+    private String password;
     private String name;
-    private int teacher_id;
-    private int college_id;
-    private int lession_id;
-    private int grade_id;
-    private String start_time;
-    private String end_time;
-    private String create_by;
+    private int sex;
+    private String photo;
+    private String phone;
+    private String email;
+    private int role;
+    private int status;
+    private String dept_id;
     private Date create_date;
-    private String update_by;
+    private String create_by;
     private Date update_date;
+    private String update_by;
     private String remarks;
-    private String status;
     private String del_flag;
 }

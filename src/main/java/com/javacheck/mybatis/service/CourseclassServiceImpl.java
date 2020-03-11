@@ -14,4 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Component
 public class CourseclassServiceImpl extends ServiceImpl<CourseclassMapper,Courseclass> implements CourseclassService{
+    @Autowired
+    CourseclassMapper courseclassMapper;
+    @Override
+    public Courseclass QueryCourseclassById(Integer id) {
+        return courseclassMapper.selectById(id);
+    }
 }

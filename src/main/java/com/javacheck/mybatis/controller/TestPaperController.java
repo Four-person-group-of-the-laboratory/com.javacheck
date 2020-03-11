@@ -1,18 +1,18 @@
 package com.javacheck.mybatis.controller;
 
-import com.javacheck.mybatis.entity.RespPageEntity;
-import com.javacheck.mybatis.entity.ResultCode;
-import com.javacheck.mybatis.service.Paper_CourserclassService;
-import com.javacheck.mybatis.service.TestPaperService;
+import com.javacheck.mybatis.dto.TestDetil;
+import com.javacheck.mybatis.entity.*;
+import com.javacheck.mybatis.service.*;
 import com.javacheck.mybatis.util.ResultGenerator;
-import com.javacheck.mybatis.entity.Person;
-import com.javacheck.mybatis.entity.RestResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("testpaper")
 public class TestPaperController {
@@ -23,6 +23,12 @@ public class TestPaperController {
     private Paper_CourserclassService paper_courserclassService;
     @Autowired
     private TestPaperService testPaperService;
+    @Autowired
+    private ClassStudentService classStudentService;
+    @Autowired
+    private CourseclassService courseclassService;
+    @Autowired
+    private SysUserService sysUserService;
 
 
     @GetMapping("/page/")
@@ -62,8 +68,38 @@ public class TestPaperController {
         return restResult;
     }
     @GetMapping("/testdetail/")
-    public void getTestDetail(@RequestParam("TestPaperId") Integer id){
-        System.out.println("试卷id为"+id);
+    public RestResult getTestDetail(@RequestParam("TestPaperId") Integer id){
+        Integer studentcount = classStudentService.CountStudentByCourseClassId(id);
+        List<Paper_Courserclass> paper_courserclass = paper_courserclassService.getPaper_CourserclassByPaperId(id);
+        Paper_Courserclass paper_class = paper_courserclass.get(0);
+        TestPaper testPaper = testPaperService.QueryPaperById(id);
+
+        Integer courseclassid = paper_class.getCourserclass_id();
+        Courseclass courseclass = courseclassService.QueryCourseclassById(courseclassid);
+
+        Integer sysuserid = courseclass.getTeacher_id();
+        SysUser sysUser = sysUserService.QuerySysUserById(sysuserid);
+        TestDetil testDetil = new TestDetil();
+
+        testDetil.setPapername(testPaper.getName());
+        testDetil.setStart_time(paper_class.getStart_time());
+        testDetil.setEnd_time(paper_class.getEnd_time());
+        testDetil.setStuent_cout(studentcount);
+        testDetil.setCourseclassname(courseclass.getName());
+        testDetil.setTeacher(sysUser.getName());
+
+        List<TestDetil> testDetilList = new ArrayList<>();
+        testDetilList.add(testDetil);
+
+        System.out.println(testDetil);
+        RestResult restResult = new RestResult();
+        try{
+            restResult.setData(testDetilList);
+            restResult.setCode(ResultCode.SUCCESS);
+        }catch (Exception e){
+            restResult.setCode(ResultCode.FAIL);
+        }
+        return restResult;
     }
 
 
