@@ -2,7 +2,7 @@ package com.javacheck.mybatis.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import com.javacheck.mybatis.entity.TestPaper;
-import com.javacheck.mybatis.entity.RespPageEntity;
+import com.javacheck.mybatis.dto.RespPageEntity;
 
 import java.util.List;
 

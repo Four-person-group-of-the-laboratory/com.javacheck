@@ -21,7 +21,7 @@ public class ClassStudentServicelmpl extends ServiceImpl<ClassStudentMapper, Cla
     public Integer CountStudentByCourseClassId(Integer id) {
         EntityWrapper<ClassStudent> wrapper = new EntityWrapper();
         wrapper.eq("courseclass_id",id);
-        System.out.println("人数为"+classStudentMapper.selectCount(wrapper));
+//        System.out.println("人数为"+classStudentMapper.selectCount(wrapper));
         return classStudentMapper.selectCount(wrapper);
     }
 }

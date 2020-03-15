@@ -1,5 +1,8 @@
 package com.javacheck.mybatis.controller;
 
+import com.javacheck.mybatis.dto.RespPageEntity;
+import com.javacheck.mybatis.dto.RestResult;
+import com.javacheck.mybatis.dto.ResultCode;
 import com.javacheck.mybatis.dto.TestDetil;
 import com.javacheck.mybatis.entity.*;
 import com.javacheck.mybatis.service.*;
@@ -7,9 +10,7 @@ import com.javacheck.mybatis.util.ResultGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.ConstraintViolationException;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ClassStudentMapper extends BaseMapper<ClassStudent>{
+
+    public Integer CountStudentByCourseClassId(Integer id);
 }

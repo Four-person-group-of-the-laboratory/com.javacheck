@@ -4,14 +4,13 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.javacheck.mybatis.entity.TestPaper;
-import com.javacheck.mybatis.entity.RespPageEntity;
+import com.javacheck.mybatis.dto.RespPageEntity;
 import com.javacheck.mybatis.mapper.TestPaperMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author: lijincan

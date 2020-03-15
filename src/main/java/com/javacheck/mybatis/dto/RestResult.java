@@ -1,4 +1,4 @@
-package com.javacheck.mybatis.entity;
+package com.javacheck.mybatis.dto;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;

@@ -1,7 +1,6 @@
 package com.javacheck.mybatis.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.javacheck.mybatis.entity.RespPageEntity;
 import com.javacheck.mybatis.entity.TestPaper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;

@@ -2,14 +2,10 @@ package com.javacheck.mybatis.service;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.javacheck.mybatis.entity.ClassStudent;
 import com.javacheck.mybatis.entity.Paper_Courserclass;
-import com.javacheck.mybatis.entity.RespPageEntity;
 import com.javacheck.mybatis.mapper.Paper_CourserclassMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.javacheck.mybatis.util;
 
-import com.javacheck.mybatis.entity.RestResult;
-import com.javacheck.mybatis.entity.ResultCode;
+import com.javacheck.mybatis.dto.RestResult;
+import com.javacheck.mybatis.dto.ResultCode;
 
 
 import org.springframework.stereotype.Component;

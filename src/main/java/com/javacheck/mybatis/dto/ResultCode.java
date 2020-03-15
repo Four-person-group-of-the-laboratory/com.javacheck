@@ -1,4 +1,4 @@
-package com.javacheck.mybatis.entity;
+package com.javacheck.mybatis.dto;
 
 /**
  * @author Administrator
